@@ -10,8 +10,8 @@ reddit = praw.Reddit(client_id='_FtWRc2jEKAgsA',
 
 topSubmission = ('topSubmissions from {}.txt'.format(date.today()))
 bottomSubmission = ('bottomSubmissions from {}.txt'.format(date.today()))
-simpleTitleTop = ('simpleTitleTop from {}.txt'.format(date.today()))
-simpleTitleBottom = 'simpleTitleBottom from {}.txt'.format(date.today())
+top = 'top.txt'
+bottom = 'bottom.txt'
 
 f = open(topSubmission, "w")
 iamaTally = 0
@@ -254,7 +254,7 @@ file.write("Computed Value:    ")
 file.write(str(WTFTally))
 file.write("\n \n \n ")
 
-j = open(simpleTitleTop, "w")
+j = open('top.txt', "w")
 for submission in reddit.subreddit('iama').hot(limit=10):
     print(submission.title)
     j.write(submission.title)
@@ -280,7 +280,7 @@ for submission in reddit.subreddit('worldnews').hot(limit=10):
     j.write(submission.title)
     file.write("\n")
 
-k = open(simpleTitleBottom, "w")
+k = open('bottom.txt', "w")
 for submission in reddit.subreddit('outoftheloop').hot(limit=10):
     print(submission.title)
     k.write(submission.title)
